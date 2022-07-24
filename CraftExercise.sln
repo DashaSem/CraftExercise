@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftExercise", "CraftExerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Craft", "Craft\Craft.csproj", "{7D3D0085-FEF9-4B81-9302-33AFC49A9DC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftExcersiseXUnit", "CraftExcersiseXUnit\CraftExcersiseXUnit.csproj", "{E5DFD733-9516-439D-B6A3-5F48286C8C8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D3D0085-FEF9-4B81-9302-33AFC49A9DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3D0085-FEF9-4B81-9302-33AFC49A9DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3D0085-FEF9-4B81-9302-33AFC49A9DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DFD733-9516-439D-B6A3-5F48286C8C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DFD733-9516-439D-B6A3-5F48286C8C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DFD733-9516-439D-B6A3-5F48286C8C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DFD733-9516-439D-B6A3-5F48286C8C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

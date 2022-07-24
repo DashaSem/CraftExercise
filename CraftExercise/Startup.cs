@@ -46,7 +46,6 @@ namespace CraftExercise
 			{
 				endpoints.MapControllers();
 			});
-
 		}
 
 		private void InitAutoMapper(IServiceCollection services)
