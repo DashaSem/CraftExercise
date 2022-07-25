@@ -22,7 +22,6 @@ namespace CraftExercise
 		public void ConfigureServices(IServiceCollection services)
 		{
 			this.InitAutoMapper(services);
-
 			services.AddSingleton<PlayerStreamFactory, PlayerStreamFactory>();
 			services.AddSingleton<PlayerProvider, PlayerProvider>();
 			services.AddControllers();
