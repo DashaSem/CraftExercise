@@ -13,7 +13,7 @@ namespace CraftExcersiseXUnit
 	public class PlayersControllerTests
 	{
 		private readonly PlayersController playersController;
-		//test data
+		//test
 		const string FileContentWithNoPlayers = "";
 		const string FileContentWithTwoPlayers = @"playerID,birthYear,birthMonth,birthDay,birthCountry,birthState,birthCity,deathYear,deathMonth,deathDay,deathCountry,deathState,deathCity,nameFirst,nameLast,nameGiven,weight,height,bats,throws,debut,finalGame,retroID,bbrefID
 aardsda01,1981,12,27,USA,CO,Denver,,,,,,,David,Aardsma,David Allan,215,75,R,R,2004-04-06,2015-08-23,aardd001,aardsda01
@@ -27,7 +27,6 @@ aaronha01,1934,2,5,USA,AL,Mobile,,,,,,,Hank,Aaron,Henry Louis,180,72,R,R,1954-04
 		public PlayersControllerTests()
 		{
 			var services = new ServiceCollection();
-			//services.AddTransient<IMatchRepository, MatchRepositoryStub>();
 			new Startup(null).ConfigureServices(services);
 
 			var moqPlayerStreamFactory = new Mock<PlayerStreamFactory>(null);
@@ -36,13 +35,14 @@ aaronha01,1934,2,5,USA,AL,Mobile,,,,,,,Hank,Aaron,Henry Louis,180,72,R,R,1954-04
 				.Returns(() => MakeStreamFrom(FileContent));
 			services.AddSingleton<PlayerStreamFactory>(moqPlayerStreamFactory.Object);
 
-			services.AddSingleton(new Mock<ILogger<PlayersController>>().Object);
+			var logger = new Mock<ILogger<PlayersController>>().Object;
+			services.AddSingleton<ILogger<PlayersController>>(logger);
+
 			services.AddSingleton<PlayersController>();
 
 			var serviceProvider = services.BuildServiceProvider();
 
 			playersController = serviceProvider.GetService<PlayersController>();
-			var pp = serviceProvider.GetService<PlayerProvider>();
 		}
 
 		private static Stream MakeStreamFrom(string s)

@@ -21,7 +21,7 @@ namespace CraftExercise.Logic
 			this.playerStreamFactory = playerStreamFactory;
 		}
 
-		public virtual List<PlayerModel> GetPlayers()
+		public List<PlayerModel> GetPlayers()
 		{
 			using (var stream = this.playerStreamFactory.GetStream())
 			using (var reader = new StreamReader(stream))

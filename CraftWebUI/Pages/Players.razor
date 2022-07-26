@@ -1,0 +1,50 @@
+﻿@page "/players"
+
+@using CraftWebUI.Data
+@using CraftWebUI.Logic
+@inject PlayerApiConsumer playerApiConsumer
+
+<h1>Players</h1>
+
+@if (players == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Bats</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in players)
+            {
+                <tr>
+                    <td>@player.PlayerID</td>
+                    <td>@player.NameFirst</td>
+                    <td>@player.NameLast</td>
+                    <td>@player.Bats</td>
+                    <td>
+                        <a href="/playerDetails/@player.PlayerID">Details</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private PlayerModel[] players;
+
+    protected override async Task OnInitializedAsync()
+    {
+        players = await playerApiConsumer.GetPlayersAsync();
+    }
+}

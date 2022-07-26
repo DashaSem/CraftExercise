@@ -24,12 +24,14 @@ namespace CraftExercise.Controllers
 		[HttpGet]
 		public IEnumerable<PlayerModel> Get()
 		{
+			this._logger.LogInformation("Get player list method invoked");
 			return this.playerProvider.GetPlayers();
 		}
 
 		[HttpGet("{id}")]
 		public ActionResult<PlayerModel> Get(string id)
 		{
+			this._logger.LogInformation("Get player details method invoked");
 			var player = this.playerProvider.GetPlayers().FirstOrDefault(p => p.PlayerID == id);
 			if (player != null)
 			{
