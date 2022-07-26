@@ -1,6 +1,7 @@
 ﻿@page "/players"
 
 @using CraftWebUI.Data
+@using CraftWebUI.Logic
 @inject PlayerApiConsumer playerApiConsumer
 
 <h1>Players</h1>
@@ -24,16 +25,16 @@ else
         <tbody>
             @foreach (var player in players)
             {
-            <tr>
-                <td>@player.PlayerID</td>
-                <td>@player.NameFirst</td>
-                <td>@player.NameLast</td>
-                <td>@player.Bats</td>
-                <td>
-                    <a href="/playerDetails/@player.PlayerID">Details</a>
-                    
-                </td>
-            </tr>
+                <tr>
+                    <td>@player.PlayerID</td>
+                    <td>@player.NameFirst</td>
+                    <td>@player.NameLast</td>
+                    <td>@player.Bats</td>
+                    <td>
+                        <a href="/playerDetails/@player.PlayerID">Details</a>
+
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
